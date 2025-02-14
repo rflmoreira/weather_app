@@ -40,17 +40,19 @@ body{
 .search-box input {
     color: #dff6ff;
     width: 80%;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
+    text-align: center;
     padding-left: 32px;
     background-color: transparent;
 }
 
 .search-box input::placeholder{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff86;
+    text-align: center;
 }
 
 .search-box button {

@@ -41,6 +41,11 @@ search.addEventListener('click', () => {
     fetchWeather(city);
 });
 
+// Adicione o evento click ao input para selecionar o texto
+input.addEventListener('click', function() {
+    this.select();
+});
+
 const setBackground = (temp) => {
     if (temp <= 0) {
         document.body.style.backgroundImage = 'url("src/images/cold.gif")';
@@ -52,7 +57,6 @@ const setBackground = (temp) => {
         document.body.style.backgroundImage = 'url("src/images/hot.gif")';
     }
 };
-
 
 const fetchWeather = (city) => {
     const APIKey = '22d2e2199cb498f963b99bcd19a467cd';
