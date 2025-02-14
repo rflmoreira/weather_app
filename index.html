@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Aplicativo de Previsão do Tempo</title>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl_st2QfvJsr_amjTgEeEt8g9gz86ZFjs&libraries=places"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="autocomplete" class="search-input" placeholder="Qual é a sua localização?" aria-label="Digite sua localização">
+            <button class="fa-solid fa-magnifying-glass"></button>
+        </div>
+
+        <div class="not-found">
+            <img src="src/images/404.png" alt="404">
+            <p>Oops! Parece que a localização é inválida. 😕</p>
+        </div>
+
+        <div class="weather-box">
+            <img src="">
+            <p class="temperature"></p>
+            <p class="description"></p><br>
+            <a href="https://openweathermap.org/" target="_blank">OpenWeather <i class='bx bx-info-circle'></i></a>
+        </div>
+
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Umidade do ar</p>
+                </div>
+            </div>
+
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Vento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-inferior">
+        <div class='footerContent'>
+          © 2025 – Feito com <i class='bx bxs-heart' style='color: red;'></i>, 
+          <a href="https://github.com/rflmoreira" target="_blank">Rafael Moreira. <i class='bx bx-link-external'></i></a>
+      </div>    
+      </footer>
+
+    <script src="https://kit.fontawesome.com/dfd10a8a3e.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
