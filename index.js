@@ -17,18 +17,16 @@ const translateDescription = (description) => {
         'thunderstorm': 'trovoada',
         'snow': 'neve',
         'mist': 'névoa',
+        'haze': 'neblina',
     };
     return translations[description.toLowerCase()] || description;
 };
 
-// Inicialize o Autocomplete do Google Places
 const autocomplete = new google.maps.places.Autocomplete(input);
 
-// Adicione um listener para o evento de seleção do Autocomplete
 autocomplete.addListener('place_changed', () => {
     const place = autocomplete.getPlace();
     if (!place.geometry) {
-        // Usuário não selecionou uma sugestão
         return;
     }
     const city = place.name;
@@ -41,7 +39,6 @@ search.addEventListener('click', () => {
     fetchWeather(city);
 });
 
-// Adicione o evento click ao input para selecionar o texto
 input.addEventListener('click', function() {
     this.select();
 });
@@ -50,8 +47,8 @@ const setBackground = (temp) => {
     if (temp <= 0) {
         document.body.style.backgroundImage = 'url("src/images/cold.gif")';
     } else if (temp > 0 && temp <= 23) {
-        document.body.style.backgroundImage = 'url("src/images/cold.gif")';
-    } else if (temp > 23 && temp <= 30) {
+        document.body.style.backgroundImage = 'url("src/images/warm.gif")';
+    } else if (temp > 23 && temp <= 25) {
         document.body.style.backgroundImage = 'url("src/images/warm.gif")';
     } else {
         document.body.style.backgroundImage = 'url("src/images/hot.gif")';
@@ -85,23 +82,18 @@ const fetchWeather = (city) => {
                 case 'Clear':
                     image.src = 'src/images/clear.png';
                     break;
-
                 case 'Rain':
                     image.src = 'src/images/rain.png';
                     break;
-
                 case 'Snow':
                     image.src = 'src/images/snow.png';
                     break;
-
                 case 'Clouds':
                     image.src = 'src/images/cloud.png';
                     break;
-
                 case 'Haze':
                     image.src = 'src/images/mist.png';
                     break;
-
                 default:
                     image.src = '';
             }
